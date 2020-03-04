@@ -1,0 +1,97 @@
+<html>
+ 
+<head>
+ 
+<script type="text/javascript">
+
+	window.onload = draw;
+	
+	function draw(){
+		var canvas = document.getElementById('myCanvas');
+		if (canvas.getContext){
+			var ctx = canvas.getContext('2d');
+			canvas.width = window.innerWidth - 20;
+			canvas.height = window.innerHeight - 20;
+			drawFractalTree(ctx);
+			drawScanLines(ctx);
+		}
+		else{
+			alert("HTML5 Canvas isn't supported by your browser!");
+		}
+	}
+	function drawScanLines(ctx){
+		var lineHeight = 5;
+		ctx.strokeStyle = 'rgba(0,0,0,0.75)';
+		ctx.lineWidth = lineHeight / 2;
+		ctx.beginPath();
+		var i = ctx.lineWidth;
+		while (window.innerHeight>i) {
+			ctx.moveTo(0, i);
+			ctx.lineTo(window.innerWidth-20, i);
+			i = i+lineHeight;
+		}
+		ctx.closePath();
+		ctx.stroke();
+	}
+	function drawFractalTree(ctx){
+		drawTree(ctx, window.innerWidth /2, window.innerHeight, -90, 11);
+	}
+
+	function drawTree(ctx, x1, y1, angle, depth){
+
+		var BRANCH_LENGTH = random(0, 20);
+
+		if (depth != 0){
+			var x2 = x1 + (cos(angle) * depth * BRANCH_LENGTH);
+			var y2 = y1 + (sin(angle) * depth * BRANCH_LENGTH);
+			
+			drawLine(ctx, x1, y1, x2, y2, depth);
+			drawTree(ctx, x2, y2, angle - random(15,20), depth - 1);
+			drawTree(ctx, x2, y2, angle + random(15,20), depth - 1);
+		}
+	}
+
+	function drawLine(ctx, x1, y1, x2, y2, thickness){
+		ctx.fillStyle   = '#000';
+		ctx.strokeStyle = 'rgb(34,139,34)'; //Green
+
+		ctx.lineWidth = thickness * 1.5;
+		ctx.beginPath();
+
+		ctx.moveTo(x1,y1);
+		ctx.lineTo(x2, y2);
+
+		ctx.closePath();
+		ctx.stroke();
+	}
+
+
+	function cos (angle) {
+		return Math.cos(deg_to_rad(angle));
+	}
+
+	function sin (angle) {
+		return Math.sin(deg_to_rad(angle));
+	}
+
+	function deg_to_rad(angle){
+		return angle*(Math.PI/180.0);
+	}
+
+	function random(min, max){
+		return min + Math.floor(Math.random()*(max+1-min));
+		//return 10;
+	}
+	 
+</script>
+<style type="text/css">
+	body {
+		background-color: black;
+	}
+</style>
+</head>
+
+<body>
+	<canvas id="myCanvas" width="800" height="600"></canvas>
+</body>
+</html>

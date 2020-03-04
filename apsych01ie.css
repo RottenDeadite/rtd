@@ -1,0 +1,389 @@
+body
+{
+	font-family: georgia;
+	font-size: 10pt;
+	margin: 0px;
+	background-color: #e1dfd9;
+}
+.borderless
+{
+	margin: 0px;
+	border: 1px solid green;
+	padding: 0px;
+}
+a:link
+{
+	text-decoration: none;
+	color: #aa0000;
+}
+a:hover
+{
+	text-decoration: underline;
+	color: red;
+}
+a:active
+{
+	text-decoration: underline;
+	color: #000000;
+}
+a:visited
+{
+	text-decoration: none;
+	color: #0000AA;
+}
+img.xhtmlimage
+{
+	height: 31px;
+	width: 88px;
+	filter: alpha(opacity=50);
+}
+img.emailimage
+{
+	height: 37px;
+	width: 153px;
+}
+img.front-text
+{
+	height: 99px;
+	width: 608px;
+}
+img.ipswitchlink
+{
+
+	height: 43px;
+	width: 131px;
+}
+img.aboutmelink
+{
+	height: 50px;
+	width: 131px;
+}
+img.facebook
+{
+	height: 30px;
+	width: 56px;
+}
+img.blog
+{
+	height: 30px;
+	width: 28px;
+}
+img.twitter
+{
+	height: 30px;
+	width: 42px;
+}
+.backgroundimage1
+{
+	position: absolute;
+	width: 100%;
+	height: 128px;
+	z-index: 0;
+}
+.backgroundimage2
+{
+	width: 100%;
+	height: 400px;
+}
+div.paperdrop
+{
+	background-image: url('images/paper-grad10x10.png');
+	width: 100%;
+	height: 10px;
+	position: absolute;
+	z-index: 3;
+	background-repeat: repeat-x;
+	left: 0px;
+}
+div.bottomthingy
+{
+	position: absolute;
+	top: 128px;
+	width: 100%;
+	background-color: #e1dfd9;
+	z-index: 1;
+}
+img.bottomgrad
+{
+	position: relative;
+	top: -6px;
+	width: 100%;
+	height: 10px;
+}
+div.watermark
+{
+	position: absolute;
+	z-index: 2;
+}
+div.ccbold
+{
+	font-size: 16pt;
+	margin-bottom: 5px;
+}
+img.watermark
+{
+	height: 470px;
+	width: 470px;
+}
+img.watermark2
+{
+	height: 341px;
+	width: 470px;
+}
+div.topheading
+{
+	position: absolute;
+	width: 100%;
+}
+div.topleft
+{
+	position: absolute;
+	left: 5%;
+	z-index: 3;
+	margin-top: 5%;
+	float: left;
+	font-size: 12pt;
+	line-height: 18pt;
+}
+div.topright
+{
+	position: relative;
+	float: right;
+	text-align: right;
+	z-index: 1;
+	width: 200px;
+	margin-right: 5%;
+	margin-top: 5%;
+}
+div.topright .name
+{
+	font-size: 12pt;
+	font-weight: bold;
+}
+div.bottom
+{
+	position: absolute;
+	top: 0px;
+	border: 0px solid blue;
+	margin: 0;
+	padding: 0;
+	z-index: 20;
+	left: 0px;
+	width: 100%;
+}
+div.bottom .centercontent
+{
+	margin: 0 auto;
+	width: 610px;
+	margin-top: 10%;
+	text-align: center;
+	border: 0px solid green;
+}
+.centercontent .heading
+{
+	font-weight: bold;
+	font-size: 12pt;
+}
+div.bottomleft
+{
+	top: 90px;
+	width: 200px;
+	float: left;
+	position: relative;
+	left: 5%;
+	z-index: 1;
+}
+div.bottomright
+{
+	width: 200px;
+	top: 90px;
+	position: relative;
+	float: right;
+	text-align: right;
+	z-index: 1;
+	border: 0px solid red;
+	margin-right: 5%;
+}
+div.aboutmethingy
+{
+	position: absolute;
+	top: 128px;
+	background-color: gray;
+	width: 100%;
+	display: none;
+	z-index: 4;
+	border-bottom: 1px solid black;
+}
+div.ipswitchthingy
+{
+	position: absolute;
+	top: 128px;
+	width: 100%;
+	background-color: gray;
+	display: none;
+	z-index: 4;
+	border-bottom: 1px solid black;
+}
+div.blood {
+	position:absolute;
+	top:0;
+	left:0;
+	width:100%;
+	height:100%;
+	z-index: 5;
+}
+.blood > img {
+	height: 100%;
+	width: 100%;
+}
+div.aboutthingy
+{
+	position: absolute;
+	top: 128px;
+	background-color: gray;
+	width: 100%;
+	display: none;
+	z-index: 4;
+	border-bottom: 1px solid black;
+}
+/* Ipswitch Content */
+img.iplogoimage
+{
+	padding-top: 5px;
+	padding-left: 5px;
+}
+div.aboutmecaption
+{
+	width: 640px;
+	background-color: black;
+	margin: auto;
+	margin-bottom: 0px;
+	display: block;
+	height: 100px;
+	position: relative;
+	background-image: url("images/aboutme-headtile01.jpg");
+	border: 1px solid black;
+}
+div.whirlingcaption
+{
+	width: 640px;
+	background-color: black;
+	margin: auto;
+	margin-bottom: 0px;
+	display: block;
+	height: 100px;
+	position: relative;
+	background-image: url("images/whirlingschool-headtile01.jpg");
+	border: 1px solid black;
+}
+div.ipswitchcaption
+{
+	width: 640px;
+	background-color: black;
+	margin: auto;
+	margin-bottom: 0px;
+	display: block;
+	height: 100px;
+	position: relative;
+	background-image: url("images/ipswitch-citytiles01.gif");
+	border: 1px solid black;
+}
+div.caption-aboutme
+{
+	position: relative;
+	left: 80px;
+	top: -100px;
+	font-size: 10pt;
+	color: white;
+}
+div.caption-ipswitch
+{
+	position: relative;
+	left: 40px;
+	top: -100px;
+	font-size: 10pt;
+	color: white;
+}
+div.caption-whirling
+{
+	position: relative;
+	left: 80px;
+	top: -100px;
+	font-size: 10pt;
+	color: black;
+}
+div.title
+{
+	padding-top: 10px;
+	text-align: left;
+	font-size: 24pt;
+}
+div.title a
+{
+	text-decoration: none;
+	color: black;
+}
+div.title a:hover
+{
+	text-decoration: underline;
+	color: #AA0000;
+}
+div.heading
+{
+	width: 640px;
+	margin: auto;
+	font-size: 14pt;
+	background-color: black;
+	color: white;
+	text-align: center;
+	border: 1px solid black;
+}
+div.heading a:link
+{
+	color: #AA0000;
+}
+div.heading a:visited
+{
+	color: white;
+}
+div.heading a:hover
+{
+	color: red;
+}
+div.watermark2
+{
+	position: absolute;
+	z-index: -1;
+}
+div.content
+{
+	margin: auto;
+	position: relative;
+	width: 630px;
+	background-color: white;
+	border-left: 1px solid black;
+	border-right: 1px solid black;
+	padding-top: 0px;
+	margin-top: 0px;
+	z-index: 3;
+	padding: 5px;
+	font-size: 10pt;
+	text-indent: 1em;
+}
+div.short
+{
+	text-align: center;
+	text-indent: 0em;
+}
+div.content a:link
+{
+	color: #AA0000;
+}
+div.content a:visited
+{
+	color: black;
+}
+div.content a:hover
+{
+	color: red;
+}

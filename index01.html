@@ -1,0 +1,120 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+	<head>
+		<link rel="stylesheet" href="apsych01ie.css" />
+		<title>Chris Nelson</title>
+	</head>
+	<body>
+		<div class="watermark">
+			<img src="images/paper-rd-watermark01.png" class="watermark" alt="watermark" />
+		</div>
+		<div class="backgroundimage1">
+			<img src="images/paper-bg01a.jpg" class="backgroundimage1" alt="background image 1" />
+		</div>
+		<div class="topleft">
+			<a href="" id="aboutclick">About Me</a><br />
+			<a href="" id="ipswitchclick">The New Whirling School</a>
+		</div>
+		<div class="topright">
+			<div class="name">Chris Nelson</div>
+			<a href="mailto:chris@rottendeadite.com">chris@rottendeadite.com</a><br/>
+			<a href="http://www.facebook.com/home.php#/profile.php?id=771619027&amp;ref=profile" >facebook</a> | <a href="http://www.rottendeadite.com/wp">blog</a> | <a href="http://rottendeadite.tumblr.com" >tumblr</a>
+		</div>
+		<div class="clear" style="clear: all;"></div>
+		<!-- Begin Ipswitch Content -->
+		<div class="ipswitchthingy" id="ipswitchthingy">
+		</div>
+		<!-- End Ipswitch Content -->
+		<!-- Begin About Content -->
+		<div class="aboutthingy" id="aboutthingy">
+		</div>
+		<!-- End About Content -->
+
+		<div class="bottomthingy" id="bottomthingy" >
+			<img src="images/paper-bg02a.jpg" class="backgroundimage2" alt="paper background 2" />
+			<div class="bottom">
+				<div class="centercontent">
+					<div class="ccbold">Look at this website.</div>
+					It's perfect.  The background is "bone."  The font is something called "Silian Rail."<br />
+					Raised lettering, with fully HTML5 compliant code.  DIV-ordering.  CSS-driven, table-less layout.<br />
+					And just look at the tasteful thickness of the margins.<br />
+					Oh my God, it even has a watermark.
+				</div>
+				<div class="bottomleft">cell: (770) 555-1234</div>
+				<div class="bottomright">&#169; 2009 Chris Nelson</div>
+			</div>
+			<img src="images/paper-grad10x10.png" class="bottomgrad" alt="bottom gradient" />
+		</div>
+		<script type="text/javascript" src="jquery-1.3.1.min.js"></script>
+		<script type="text/javascript">
+
+			$.fn.delay = function(time, callback){
+				jQuery.fx.step.delay = function(){};
+				// Return meaningless animation, (will be added to queue)
+				return this.animate({delay:1}, time, callback);
+			};
+			let mainToggle = "closed";
+			function loadContent(elementSelector, sourceUrl){
+				$(""+elementSelector+"").load(""+sourceUrl+"");
+			}
+			$(document).ready(function(){
+				loadContent('#ipswitchthingy', 'whirling.content.php');
+				loadContent('#aboutthingy', 'about.content.php');
+				let ipswitchClick = $("#ipswitchclick");
+				let aboutClick = $("#aboutclick");
+				let ipswitchThingy = $("#ipswitchthingy");
+				let bottomThingy = $("#bottomthingy");
+				let aboutThingy = $("#aboutthingy");
+				ipswitchClick.click(function(){
+					if (mainToggle === "closed")
+					{
+						bottomThingy.animate({top: 128+ipswitchThingy.height()}, 1000);
+						ipswitchThingy.slideDown(1000);
+						mainToggle = "ipswitch";
+					}
+					else if (mainToggle === "ipswitch")
+					{
+						bottomThingy.animate({top: '128'}, 1000);
+						ipswitchThingy.slideUp(1000);
+						mainToggle = "closed";
+					}
+					else
+					{
+						bottomThingy.animate({top: '128'}, 1000).animate({top: 128+ipswitchThingy.height()}, 1000);
+						aboutThingy.slideUp(1000);
+						ipswitchThingy.delay(1000).slideDown(1000);
+						mainToggle = "ipswitch";
+					}
+					return false;
+				});
+				aboutClick.click(function(){
+					if (mainToggle === "closed")
+					{
+						bottomThingy.animate({top: 128+aboutThingy.height()}, 1000);
+						// bloodImg.css('opacity', 1);
+						aboutThingy.slideDown(1000);
+						$('.blood').css('opacity', 1);
+						$('.blood').animate({opacity: '0.0'},1000);
+						mainToggle = "aboutme";
+					}
+					else if (mainToggle === "aboutme")
+					{
+						bottomThingy.animate({top: '128'}, 1000);
+						aboutThingy.slideUp(1000);
+						$('.blood').delay(1000).animate({opacity: '1'}, 0);
+						mainToggle = "closed";
+					}
+					else
+					{
+						bottomThingy.animate({top: '128'}, 1000).animate({top: 128+aboutThingy.height()}, 1000);
+						ipswitchThingy.slideUp(1000);
+						$('.blood').delay(1000).css('opacity', 1);
+						aboutThingy.delay(1000).slideDown(1000);
+						$('.blood').animate({opacity: '0.0'},1000);
+						mainToggle = "aboutme";
+					}
+					return false;
+				});
+			});
+		</script>
+	</body>
+</html>
