@@ -1,0 +1,82 @@
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <link rel="stylesheet" href="apsych02.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Chris Nelson</title>
+</head>
+<body>
+    <div class="cardcontainer closed">
+        <div class="watermark">
+            <img src="images/paper-rd-watermark01.png" class="watermark" alt="watermark" />
+        </div>
+        <div class="top">
+            <div class="topleft">
+                <a href="" class="click" id="aboutclick">About Me</a><br />
+                <a href="" class="click" id="whirlingclick">The New Whirling School</a>
+            </div>
+            <div class="topright">
+                <div class="name">Chris Nelson</div>
+                <a href="mailto:chris@rottendeadite.com">chris@rottendeadite.com</a><br/>
+                <a href="http://www.facebook.com/home.php#/profile.php?id=771619027&amp;ref=profile" >facebook</a> | <a href="http://www.rottendeadite.com/wp">blog</a> | <a href="http://rottendeadite.tumblr.com" >tumblr</a>
+            </div>
+        </div>
+        <div class="middle">
+            <div class="content" id="content" style="height: 0px;">
+                <div id="blood" class="blood"><img src="images/blood.png"/></div>
+                <!-- Begin Ipswitch Content -->
+                <article class="whirling entry visible" id="whirling"></article>
+                <!-- End Ipswitch Content -->
+                <!-- Begin About Content -->
+<!--                <article class="about entry visible" id="about"></article>-->
+                <!-- End About Content -->
+            </div>
+        </div>
+        <div class="bottom">
+            <div class="centercontent">
+                <div class="ccbold">Look at this website.</div>
+                It's perfect.  The background is "bone."  The font is something called "Silian Rail."<br />
+                Raised lettering, with fully HTML5 compliant code.  DIV-ordering.  CSS-driven, table-less layout.<br />
+                And just look at the tasteful thickness of the margins.<br />
+                Oh my God, it even has a watermark.
+            </div>
+            <div class="bottomleft">cell: (770) 555-1234</div>
+            <div class="bottomright">&#169; 2020 Chris Nelson</div>
+        </div>
+    </div>
+    <script type="text/javascript" src="jquery-3.4.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            function loadContent(elementSelector, sourceUrl){
+                $(""+elementSelector+"").load(""+sourceUrl+"");
+            }
+            loadContent('#whirling', 'whirling.content.php');
+            loadContent('#about', 'about.content.php');
+            const whirlingclick = $('#whirlingclick');
+            const aboutclick = $('#aboutclick');
+            const whirlingcontent = $('#whirling');
+            const blood = $('.blood');
+            const aboutcontent = $('#about');
+            const aboutheight = aboutcontent.height();
+            const content = $('#content.content');
+            console.log(whirlingcontent.height());
+            const card = $('.cardcontainer');
+            // whirlingcontent.css('height', 0);
+            whirlingclick.click(function(e) {
+                e.preventDefault();
+                if (card.hasClass('open')) {
+                    console.log('open');
+                    card.addClass('closed').removeClass('open');
+                    content.animate({height: '0'}, 1000, 'swing', function(){
+                        blood.animate({opacity: '1'}, 1000)
+                    });
+                } else if (card.hasClass('closed')) {
+                    console.log('closed');
+                    card.addClass('open').removeClass('closed');
+                    content.animate({height: $('#whirling').height()}, 1000);
+                    blood.animate({opacity: '0.0'}, 1000)
+                }
+            });
+        });
+    </script>
+</body>
+</html>

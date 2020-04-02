@@ -1,7 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="0751501b-2ee0-4cad-ae69-e99d69d48185" name="Default Changelist" comment="" />
+    <list default="true" id="0751501b-2ee0-4cad-ae69-e99d69d48185" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/apsych02.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/index02.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/index01.html" beforeDir="false" afterPath="$PROJECT_DIR$/index01.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ipswitch.content.php" beforeDir="false" afterPath="$PROJECT_DIR$/ipswitch.content.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/whirling.content.php" beforeDir="false" afterPath="$PROJECT_DIR$/whirling.content.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -12,22 +21,43 @@
       <executable />
     </execution>
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="CSS File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="ProjectId" id="1Yck9bONgs5G7PjX9ABqNyXbhxH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="list.type.of.created.stylesheet" value="CSS" />
     <property name="node.js.detected.package.eslint" value="true" />
     <property name="node.js.detected.package.tslint" value="true" />
     <property name="node.js.path.for.package.eslint" value="project" />
     <property name="node.js.path.for.package.tslint" value="project" />
     <property name="node.js.selected.package.eslint" value="(autodetect)" />
     <property name="node.js.selected.package.tslint" value="(autodetect)" />
+  </component>
+  <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$" />
+    </key>
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -51,21 +81,32 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1583249119701</updated>
-      <workItem from="1583249120832" duration="4187000" />
+      <workItem from="1583249120832" duration="11720000" />
+      <workItem from="1584378097954" duration="17144000" />
+      <workItem from="1585774649944" duration="609000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
   </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
   <component name="WindowStateProjectService">
     <state x="423" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1583271962717">
       <screen x="0" y="23" width="1920" height="1127" />
     </state>
     <state x="423" y="238" key="#com.intellij.execution.impl.EditConfigurationsDialog/1920.23.1920.1057/0.23.1920.1127@0.23.1920.1127" timestamp="1583271962717" />
-    <state x="637" y="307" width="670" height="676" key="search.everywhere.popup" timestamp="1583271957801">
+    <state x="755" y="498" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2" timestamp="1583424914757">
       <screen x="0" y="23" width="1920" height="1127" />
     </state>
-    <state x="637" y="307" width="670" height="676" key="search.everywhere.popup/1920.23.1920.1057/0.23.1920.1127@0.23.1920.1127" timestamp="1583271957801" />
+    <state x="755" y="498" key="com.intellij.openapi.vcs.update.UpdateOrStatusOptionsDialogupdate-v2/1920.23.1920.1057/0.23.1920.1127@0.23.1920.1127" timestamp="1583424914757" />
+    <state x="2769" y="290" width="894" height="635" key="search.everywhere.popup" timestamp="1585590090123">
+      <screen x="1920" y="23" width="2560" height="1057" />
+    </state>
+    <state x="637" y="320" width="670" height="706" key="search.everywhere.popup/1920.23.1920.1007/0.23.1920.1177@0.23.1920.1177" timestamp="1583527881959" />
+    <state x="637" y="307" width="670" height="676" key="search.everywhere.popup/1920.23.1920.1057/0.23.1920.1127@0.23.1920.1127" timestamp="1583356434857" />
+    <state x="2769" y="290" width="894" height="635" key="search.everywhere.popup/1920.23.2560.1057/0.23.1920.1127@1920.23.2560.1057" timestamp="1585590090123" />
   </component>
 </project>

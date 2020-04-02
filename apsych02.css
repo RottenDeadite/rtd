@@ -1,0 +1,158 @@
+@import url('https://fonts.googleapis.com/css?family=EB+Garamond&display=swap');
+* {
+    box-sizing: border-box;
+}
+body {
+    background-color: white;
+    font-family: "EB Garamond", "Georgia", "serif";
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+
+}
+a:link
+{
+    text-decoration: none;
+    color: #aa0000;
+}
+a:hover
+{
+    text-decoration: underline;
+    color: red;
+}
+a:active
+{
+    text-decoration: underline;
+    color: #000000;
+}
+a:visited
+{
+    text-decoration: none;
+    color: #0000AA;
+}
+.cardcontainer {
+    width: 100%;
+    background-color: #e1dfd9;
+    display: block;
+    margin: 0 auto;
+    transition: top 1s, transform 1s;
+    position:relative;
+    z-index: 1;
+}
+.watermark {
+    display:block;
+    position:absolute;
+    pointer-events: none;
+    left:0;
+    top:0;
+    z-index: 10;
+}
+.click {
+    cursor: pointer;
+}
+.cardcontainer.closed {
+}
+.cardcontainer .content {
+    position:relative;
+    display:block;
+    width: 100%;
+    overflow: hidden;
+}
+/*.cardcontainer.open .content {*/
+/*    height: auto;*/
+/*    overflow: hidden;*/
+/*}*/
+.cardcontainer.closed .content {
+    height: 0;
+}
+.top {
+    background-image: url("images/paper-bg01a.jpg");
+    background-size: 100% 100%;
+    height: 128px;
+    display:block;
+    position: relative;
+    font-size: 16px;
+    line-height: 24px;
+}
+.bottom {
+    background-image: url("images/paper-bg02a.jpg");
+    background-size: 100% 100%;
+    height: 400px;
+    display:block;
+    position: relative;
+}
+.topleft, .topright {
+    position: absolute;
+    display:block;
+    top: 40px;
+}
+.topleft {
+    width: 200px;
+    left: 5%;
+}
+.topright {
+    right: 5%;
+    text-align: right;
+    line-height: 16px;
+}
+.name {
+    font-weight: bold;
+    line-height: 22px;
+}
+.topright a {
+    font-size: 13px;
+}
+.centercontent {
+    width: 100%;
+    padding: 0 20px;
+    text-align: center;
+    top: 35%;
+    position: absolute;
+    transform: translate(0, -50%);
+}
+.bottomleft {
+    position: absolute;
+    bottom: 40px;
+    left: 5%;
+}
+.bottomright {
+    position: absolute;
+    bottom: 40px;
+    right: 5%;
+}
+.entry {
+    position: relative;
+}
+.blood {
+    position: absolute;
+    pointer-events: none;
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    z-index: 5;
+}
+.blood > img {
+    height: 100%;
+    width: 100%;
+}
+.entry.visible {
+    display:block;
+}
+.entry.hidden {
+    display:none;
+}
+@media all and (min-width: 1024px) {
+    .cardcontainer {
+        max-width: 950px;
+        position: relative;
+        top: 50%;
+        transform: translate(0, -50%);
+        box-shadow: 10px 10px 10px black;
+    }
+    .cardcontainer.open {
+        top: 0;
+        transform: none;
+    }
+}

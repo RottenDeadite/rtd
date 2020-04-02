@@ -1,7 +1,3 @@
-	<div class="watermark2" id="watermark1">
-		<img src="images/paper-rd-watermark02.png" class="watermark2" alt="watermark" />
-	</div>
-	<div class="paperdrop" id="paperdrop1"></div>
 
 	<div class="ipswitchcaption">
 		<img src="images/ipswitchlogo01.png" class="iplogoimage" alt="watermark" />
@@ -12,8 +8,8 @@
 	<div class="content">
 		Ipswitch is an online-only, browser based Massive Multiplayer RPG that I'm developing.  It started as a project to re-learn PHP and SQL after I got out of college,
 		but some encouragement from the <a href="http://www.shacknews.com/">shacknews</a> community and the assistance of a few members is keeping me motivated.  Ipswitch
-		is a Cthulhu Mythos-themed game that includes elements of <a href="http://en.wikipedia.org/wiki/Roadside_Picnic">Roadside Picnic</a>, 
-		<a href="http://www.silenthillmemories.net/">Silent Hill</a> and <a href="http://www.urbandead.com">Urban Dead</a>.  It features a "survival horror" gameplay style 
+		is a Cthulhu Mythos-themed game that includes elements of <a href="http://en.wikipedia.org/wiki/Roadside_Picnic">Roadside Picnic</a>,
+		<a href="http://www.silenthillmemories.net/">Silent Hill</a> and <a href="http://www.urbandead.com">Urban Dead</a>.  It features a "survival horror" gameplay style
 		and a random and unpredictable world that drastically changes without warning.
 	</div>
 	<div class="heading"><a href="ogame/index.php">Navigation &amp; Combat</a><br /></div>
@@ -25,7 +21,7 @@
 	<div class="content">
 		When you're in a space with a mob icon, you can attack that target via the "attack" action button.
 	</div>
-	<div class="content">				
+	<div class="content">
 		I should also mention that, because I'm concentrating so hard on back-end development, this demonstration looks pretty ugly on Firefox, and like hell warmed over
 		on anything else.
 	</div>

@@ -20,15 +20,14 @@
 			<a href="http://www.facebook.com/home.php#/profile.php?id=771619027&amp;ref=profile" >facebook</a> | <a href="http://www.rottendeadite.com/wp">blog</a> | <a href="http://rottendeadite.tumblr.com" >tumblr</a>
 		</div>
 		<div class="clear" style="clear: all;"></div>
-		<!-- Begin Ipswitch Content -->
-		<div class="ipswitchthingy" id="ipswitchthingy">
+		<div class="content" id="content">
+			<!-- Begin Ipswitch Content -->
+			<div class="ipswitchthingy" id="ipswitchthingy"></div>
+			<!-- End Ipswitch Content -->
+			<!-- Begin About Content -->
+			<div class="aboutthingy" id="aboutthingy"></div>
+			<!-- End About Content -->
 		</div>
-		<!-- End Ipswitch Content -->
-		<!-- Begin About Content -->
-		<div class="aboutthingy" id="aboutthingy">
-		</div>
-		<!-- End About Content -->
-
 		<div class="bottomthingy" id="bottomthingy" >
 			<img src="images/paper-bg02a.jpg" class="backgroundimage2" alt="paper background 2" />
 			<div class="bottom">
@@ -65,51 +64,58 @@
 				let bottomThingy = $("#bottomthingy");
 				let aboutThingy = $("#aboutthingy");
 				ipswitchClick.click(function(){
+					let blood = $('.blood');
 					if (mainToggle === "closed")
 					{
 						bottomThingy.animate({top: 128+ipswitchThingy.height()}, 1000);
 						ipswitchThingy.slideDown(1000);
+						blood.css('opacity', 1);
+						blood.animate({opacity: '0.0'},1000);
 						mainToggle = "ipswitch";
 					}
 					else if (mainToggle === "ipswitch")
 					{
 						bottomThingy.animate({top: '128'}, 1000);
 						ipswitchThingy.slideUp(1000);
+						blood.delay(1000).animate({opacity: '1'}, 0);
 						mainToggle = "closed";
 					}
 					else
 					{
 						bottomThingy.animate({top: '128'}, 1000).animate({top: 128+ipswitchThingy.height()}, 1000);
 						aboutThingy.slideUp(1000);
+						// $('.blood').delay(1000).css('opacity', 1);
 						ipswitchThingy.delay(1000).slideDown(1000);
+						blood.animate({opacity: '0.0'},1000);
 						mainToggle = "ipswitch";
 					}
 					return false;
 				});
 				aboutClick.click(function(){
+					let blood = $('.blood');
 					if (mainToggle === "closed")
 					{
 						bottomThingy.animate({top: 128+aboutThingy.height()}, 1000);
 						// bloodImg.css('opacity', 1);
 						aboutThingy.slideDown(1000);
-						$('.blood').css('opacity', 1);
-						$('.blood').animate({opacity: '0.0'},1000);
+						blood.css('opacity', 1);
+						blood.animate({opacity: '0.0'},1000);
 						mainToggle = "aboutme";
 					}
 					else if (mainToggle === "aboutme")
 					{
 						bottomThingy.animate({top: '128'}, 1000);
 						aboutThingy.slideUp(1000);
-						$('.blood').delay(1000).animate({opacity: '1'}, 0);
+						blood.delay(1000).animate({opacity: '1'}, 0);
 						mainToggle = "closed";
 					}
 					else
 					{
 						bottomThingy.animate({top: '128'}, 1000).animate({top: 128+aboutThingy.height()}, 1000);
 						ipswitchThingy.slideUp(1000);
-						$('.blood').delay(1000).css('opacity', 1);
+						// $('.blood').delay(1000).css('opacity', 1);
 						aboutThingy.delay(1000).slideDown(1000);
-						$('.blood').animate({opacity: '0.0'},1000);
+						blood.animate({opacity: '0.0'},1000);
 						mainToggle = "aboutme";
 					}
 					return false;
