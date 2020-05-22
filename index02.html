@@ -7,7 +7,7 @@
 <body>
     <div class="cardcontainer closed">
         <div class="watermark">
-            <img src="images/paper-rd-watermark01.png" class="watermark" alt="watermark" />
+            <img src="images/watermark-top.png" class="watermark" alt="watermark" />
         </div>
         <div class="top">
             <div class="topleft">
@@ -15,7 +15,7 @@
                 <a href="" class="click" id="whirlingclick">The New Whirling School</a>
             </div>
             <div class="topright">
-                <div class="name">Chris Nelson</div>
+                <h1 class="name">Chris Nelson</h1>
                 <a href="mailto:chris@rottendeadite.com">chris@rottendeadite.com</a><br/>
                 <a href="http://www.facebook.com/home.php#/profile.php?id=771619027&amp;ref=profile" >facebook</a> | <a href="http://www.rottendeadite.com/wp">blog</a> | <a href="http://rottendeadite.tumblr.com" >tumblr</a>
             </div>
@@ -32,12 +32,15 @@
             </div>
         </div>
         <div class="bottom">
+            <div class="watermark">
+                <img src="images/watermark-bottom.png" class="watermark" alt="watermark" />
+            </div>
             <div class="centercontent">
-                <div class="ccbold">Look at this website.</div>
-                It's perfect.  The background is "bone."  The font is something called "Silian Rail."<br />
-                Raised lettering, with fully HTML5 compliant code.  DIV-ordering.  CSS-driven, table-less layout.<br />
-                And just look at the tasteful thickness of the margins.<br />
-                Oh my God, it even has a watermark.
+                <div class="ccbold"><strong>Look at this website.</strong></div>
+                <p>It's perfect.  The background is "bone."  The font is something called "Silian Rail."</p>
+                <p>Raised lettering, with fully HTML5 compliant code.  DIV-ordering.  CSS-driven, table-less layout.</p>
+                <p>And just look at the tasteful thickness of the margins.</p>
+                <p>Oh my God, it even has a watermark.</p>
             </div>
             <div class="bottomleft">cell: (770) 555-1234</div>
             <div class="bottomright">&#169; 2020 Chris Nelson</div>
@@ -58,19 +61,16 @@
             const aboutcontent = $('#about');
             const aboutheight = aboutcontent.height();
             const content = $('#content.content');
-            console.log(whirlingcontent.height());
             const card = $('.cardcontainer');
             // whirlingcontent.css('height', 0);
             whirlingclick.click(function(e) {
                 e.preventDefault();
                 if (card.hasClass('open')) {
-                    console.log('open');
                     card.addClass('closed').removeClass('open');
                     content.animate({height: '0'}, 1000, 'swing', function(){
                         blood.animate({opacity: '1'}, 1000)
                     });
                 } else if (card.hasClass('closed')) {
-                    console.log('closed');
                     card.addClass('open').removeClass('closed');
                     content.animate({height: $('#whirling').height()}, 1000);
                     blood.animate({opacity: '0.0'}, 1000)

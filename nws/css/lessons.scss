@@ -1,0 +1,273 @@
+@import "vars";
+@import "include";
+
+* {box-sizing: border-box;}
+html {width: 100%; height: 100%;}
+body {background-color: black; font-family: $sans; font-size: 1rem; margin: 0px; border: 0px; padding: 0px; overflow: hidden; height: 100%;}
+.grid {
+    display:grid;
+    grid-template-columns: [col1-start] 60% [col2-start] 40% [col2-end];
+    grid-template-rows: [row1-start] auto [row1-end];
+    @media all and (max-width: $mobile) {
+        grid-template-rows: [row1-start] 240px [row2-start] auto [row2-end];
+        grid-template-columns: [col1-start] 100% [col1-end];
+    }
+}
+.container2 {clear: left; float: left; width: 100%; overflow: hidden; background-color: $dark; height: 100%;}
+.container1 {position: relative; font-size:0; }
+.commenthidden {visibility: hidden; display: none; }
+.commenthidden {display: none; margin-left: auto; margin-right: auto; }
+.lesson {
+    grid-column: col1-start / col2-end;
+    grid-row: row1-start / row1-end;
+    display: inline-block;
+    overflow-y: scroll;
+    height: 100vh;
+    background-color: $darkfont;
+    @media all and (max-width: $mobile) {
+        grid-column: col1-start / col1-end;
+        grid-row: row1-start / row2-end;
+        height: 100vh;
+    }
+}
+.comment {
+    overflow-y: scroll;
+    height:100vh;
+    background-color: $dark;
+    color: $darkfont;
+    grid-column: none;
+    grid-row: row1-start / row1-end;
+    @media all and (max-width: $mobile) {
+        grid-column: col1-start / col1-end;
+        grid-row: row2-end;
+        height: calc(100vh - 240px);
+    }
+    .content {
+        border-bottom: 1px solid $darkfont;
+        @media all and (max-width: $mobile) {
+            border-bottom: none;
+        }
+    }
+}
+.lessontitle {font-family: $title; }
+.lessonbody {
+    width: 100%;
+    font-size: 1.4rem;
+    font-family: $serif;
+    color: $dark;
+    background-color: $darkfont;
+    transition:width 0.3s;
+    display:inline-block;
+    float:none;
+    @media all and (max-width: $mobile) {
+        height: 100%;
+    }
+    p {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        line-height: 2.5rem;
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+        @media all and (max-width: $mobile) {
+            padding-left: 1rem;
+            padding-right: 1rem;
+            margin-top: 1rem;
+            margin-bottom: 1.5rem;
+        }
+    }
+    h1 {
+        padding-left: 2rem;
+        margin: 0;
+        padding-top: 3rem;
+        font-size: 3.5rem;
+        font-weight:normal;
+        @media all and (max-width: $mobile) {
+            padding-left: 1rem;
+        }
+    }
+    a {
+        color: $dark;
+        &:active, &:visited, &:hover {
+            color: $dark;
+        }
+    }
+}
+.lessonfooter {
+    text-align: center;
+    font: 0.8em verdana;
+    margin-bottom: 50px;
+    padding: 0 20px;
+    @media all and (max-width: $mobile) {
+        font-size: 1em;
+    }
+    ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        li {
+            display:inline-block;
+            margin: 0;
+            padding: 0;
+            @media all and (max-width: $mobile) {
+                display:block;
+                line-height: 1.8em;
+                width: 180px;
+                margin: 0 auto;
+            }
+            &:after {
+                content: '|';
+                padding: 0 5px;
+                @media all and (max-width: $mobile) {
+                    float:right;
+                }
+            }
+            &:before {
+                @media all and (max-width: $mobile) {
+                    content: '|';
+                    padding: 0 5px;
+                    float: left;
+                }
+            }
+            &:last-of-type:after {
+                content:'';
+                @media all and (max-width: $mobile) {
+                    content: '|';
+                }
+            }
+        }
+    }
+    @media all and (max-width: $mobile) {
+        margin-top: 50px;
+    }
+}
+.commentfooter {
+    text-align: center;
+}
+.commentbody{
+    color: $darkfont;
+    p {
+        padding-left: 2rem;
+        padding-right: 2rem;
+        line-height: 1.5rem;
+        margin-bottom: 2rem;
+    }
+    .commenthidden {
+        display:block;
+        visibility:visible;
+    }
+    blockquote {
+        background-color: black;
+        padding: 1rem;
+        border-top: 1px solid $darkfont;
+        border-bottom: 1px solid $darkfont;
+        margin: 2rem 0;
+        position: relative;
+        &:before, &:after {
+            content: '\e902';
+            font-family:'icomoon';
+            position: absolute;
+            top:0;
+            left: 10px;
+            bottom:auto;
+            right:auto;
+            font-size: 100px;
+            color: rgba(255,255,255,0.15);
+            z-index: 0;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        &:after {
+            content: '\e903';
+            bottom: 0;
+            right: 10px;
+            top:auto;
+            left:auto;
+        }
+        p {
+            z-index: 1;
+            padding: 0 2rem;
+            margin: 1rem 0;
+            line-height: 1.5rem;
+            position: relative;
+        }
+    }
+}
+.lessonlink {
+    border-bottom: 1px black dashed;
+    &:hover, &.soHotRightNow {
+        background: $hoverbg;
+        color: $linkhover;
+        cursor: pointer;
+    }
+}
+.audiolink {
+    border-bottom: 1px black dashed;
+    &:hover {
+        background: $hoverbg;
+        text-decoration: none;
+        color: $linkhover;
+        cursor: pointer;
+    }
+}
+.mouseover {
+    background: $hoverbg;
+    text-decoration: none;
+    color: $linkhover;
+    cursor: pointer;
+}
+.external {
+    &:after {
+        content: ' \e901';
+        font-family:'icomoon';
+        color: inherit;
+        font-weight: 100;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 0.8em;
+        font-style: normal;
+    }
+}
+a:hover {
+    color: red;
+}
+a:active {
+    color: white;
+}
+a:visited {
+    color: $visited;
+}
+p.horizline {
+    border-bottom: 1px solid $darkfont;
+}
+.smaller .lesson {
+    grid-column: col1-start;
+    grid-row: row1-start;
+    @media all and (max-width: $mobile) {
+        grid-column: col1-start / col1-end;
+        grid-row: row1-start / row1-start;
+        height: 100%;
+    }
+}
+.smaller .comment {
+    grid-column: col2-start / col2-end;
+    grid-row: row1-start;
+    @media all and (max-width: $mobile) {
+        grid-column: col1-start / col1-end;
+        grid-row: row2-start / row2-end;
+    }
+}
+.comment a {
+    text-decoration: none;
+    &:link {
+        color: $link;
+    }
+    &:visited {
+        color: $linkhover;
+    }
+    &:hover {
+        color: red;
+    }
+}
+.lessonfooter a {
+    color: $linkhover;
+}

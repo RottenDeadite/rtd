@@ -3,13 +3,13 @@
     box-sizing: border-box;
 }
 body {
-    background-color: white;
+    background-color: rgb(23,0,0);
     font-family: "EB Garamond", "Georgia", "serif";
     margin: 0;
     padding: 0;
     width: 100%;
     height: 100%;
-
+    background-image: url("images/mahogany.jpg");
 }
 a:link
 {
@@ -50,6 +50,10 @@ a:visited
 }
 .click {
     cursor: pointer;
+    color: #aa0000;
+}
+.click:visited {
+    color: #aa0000;
 }
 .cardcontainer.closed {
 }
@@ -68,6 +72,7 @@ a:visited
 }
 .top {
     background-image: url("images/paper-bg01a.jpg");
+    background-color: #c6c3b9;
     background-size: 100% 100%;
     height: 128px;
     display:block;
@@ -75,8 +80,12 @@ a:visited
     font-size: 16px;
     line-height: 24px;
 }
+.middle {
+    background-color: #c6c3b9;
+}
 .bottom {
     background-image: url("images/paper-bg02a.jpg");
+    background-color: #c6c3b9;
     background-size: 100% 100%;
     height: 400px;
     display:block;
@@ -99,6 +108,8 @@ a:visited
 .name {
     font-weight: bold;
     line-height: 22px;
+    font-size: 16px;
+    margin: 0;
 }
 .topright a {
     font-size: 13px;
@@ -110,6 +121,15 @@ a:visited
     top: 35%;
     position: absolute;
     transform: translate(0, -50%);
+}
+.centercontent p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 24px;
+}
+.centercontent .ccbold {
+    font-size: 22px;
+    line-height:30px;
 }
 .bottomleft {
     position: absolute;
@@ -123,6 +143,23 @@ a:visited
 }
 .entry {
     position: relative;
+    background-color: #c6c3b9;
+    /*box-shadow: inset 0 10px 10px 0 rgba(0,0,0,0.5);*/
+}
+.entry:after {
+    content:'';
+    width: 100%;
+    height:20px;
+    position:absolute;
+    left:0;
+    top:0;
+    pointer-events: none;
+    z-index: 2;
+    background: #000000; /* Old browsers */
+    background: -moz-linear-gradient(top,  #000000 0%, rgba(0,0,0,0) 100%); /* FF3.6-15 */
+    background: -webkit-linear-gradient(top,  #000000 0%, rgba(0,0,0,0) 100%); /* Chrome10-25,Safari5.1-6 */
+    background: linear-gradient(to bottom,  #000000 0%, rgba(0,0,0,0) 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+    filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#7db9e8',GradientType=0 ); /* IE6-9 */
 }
 .blood {
     position: absolute;
@@ -142,6 +179,46 @@ a:visited
 }
 .entry.hidden {
     display:none;
+}
+.entry > .whirlingcaption {
+    background-color:white;
+    background-image:url("images/whirlingschool-headtile01.jpg");
+    background-size: cover;
+    padding: 20px 20px 0 20px;
+}
+.iplogoimage {
+    display:inline-block;
+    width: 68px;
+    padding: 0;
+    margin: 0 20px 0 0;
+    vertical-align: top;
+}
+.caption-whirling {
+    display: inline-block;
+    width: calc(100% - 100px);
+    vertical-align: top;
+    margin: 0;
+    padding: 0;
+}
+.title {
+    margin: 0;
+    color: black;
+    font-size: 34px;
+}
+article section {
+    background-color: white;
+    padding: 0 0 10px 0;
+    margin: 0;
+    display:block;
+}
+section > p {
+    padding: 0 20px;
+}
+section .heading {
+    background-color: black;
+    color: white;
+    margin: 0 0 20px 0;
+    padding: 10px 20px;
 }
 @media all and (min-width: 1024px) {
     .cardcontainer {

@@ -1,0 +1,312 @@
+@font-face {
+  font-family: 'gothic_ultra_otregular';
+  src: url("gothic_ultra_ot-webfont.eot");
+  src: url("gothic_ultra_ot-webfont.eot?#iefix") format("embedded-opentype"), url("gothic_ultra_ot-webfont.woff") format("woff"), url("gothic_ultra_ot-webfont.ttf") format("truetype"), url("gothic_ultra_ot-webfont.svg#gothic_ultra_otregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("icomoon.eot?b11l2s");
+  src: url("icomoon.eot?b11l2s#iefix") format("embedded-opentype"), url("icomoon.ttf?b11l2s") format("truetype"), url("icomoon.woff?b11l2s") format("woff"), url("icomoon.svg?b11l2s#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: optional;
+}
+
+@font-face {
+  font-family: 'gothic_ultra_otregular';
+  src: url("gothic_ultra_ot-webfont.eot");
+  src: url("gothic_ultra_ot-webfont.eot?#iefix") format("embedded-opentype"), url("gothic_ultra_ot-webfont.woff") format("woff"), url("gothic_ultra_ot-webfont.ttf") format("truetype"), url("gothic_ultra_ot-webfont.svg#gothic_ultra_otregular") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'icomoon';
+  src: url("icomoon.eot?b11l2s");
+  src: url("icomoon.eot?b11l2s#iefix") format("embedded-opentype"), url("icomoon.ttf?b11l2s") format("truetype"), url("icomoon.woff?b11l2s") format("woff"), url("icomoon.svg?b11l2s#icomoon") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: optional;
+}
+
+.modal-hidden {
+  display: none;
+}
+
+.modalWrapper {
+  display: none;
+  position: -webkit-sticky;
+  position: sticky;
+  z-index: 12;
+  -webkit-transform: translate3d(-50%, -50%, 0);
+          transform: translate3d(-50%, -50%, 0);
+  padding: 20px;
+  left: 50%;
+  top: 50%;
+  background: #888;
+  width: 600px;
+}
+
+@media all and (max-width: 1024px) {
+  .modalWrapper {
+    width: 100%;
+    -webkit-transform: none;
+            transform: none;
+    left: 0;
+    top: 33%;
+  }
+}
+
+.modalWrapper.visible {
+  display: block;
+}
+
+.modalWrapper .modalClose {
+  position: absolute;
+  right: 0;
+  top: -40px;
+  background: #888;
+  display: block;
+  width: 40px;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-size: 1em;
+  cursor: pointer;
+  font-family: 'icomoon';
+}
+
+.modalWrapper .modalClose:before {
+  content: '\e900';
+}
+
+.modalWrapper .htmlContent.visible, .modalWrapper .modalContent.visible {
+  display: block;
+  z-index: 3;
+}
+
+.modalContent img {
+  width: 100%;
+}
+
+.modalBg {
+  background-color: rgba(0, 0, 0, 0.5);
+  display: none;
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 11;
+}
+
+.modalBg.visible {
+  display: block;
+}
+
+.modalContentWrapper {
+  display: block;
+  overflow-y: auto;
+  max-height: calc(100vh - 20px);
+}
+
+.htmlContent {
+  padding: 10px 30px;
+}
+
+.htmlContent > div {
+  background-color: white;
+  display: block;
+  width: 100%;
+}
+
+.htmlContent video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.htmlContent .youtubewrapper {
+  width: 100%;
+  position: relative;
+  padding: 25px 0 56.25% 0;
+  height: 0;
+  min-width: calc(100vw - 320px);
+}
+
+.htmlContent .youtubewrapper iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+ol {
+  padding: 0 2rem 2rem 2rem;
+}
+
+ol li {
+  line-height: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+ul li {
+  line-height: 1.5rem;
+  margin-bottom: 0;
+}
+
+ul ul {
+  margin-top: 10px;
+}
+
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+body {
+  background-color: #333;
+  color: #ddd;
+  font-family: "EB Garamond", serif;
+  margin: 0;
+  padding: 0;
+  font-size: 1rem;
+}
+
+.external:after {
+  content: ' \e901';
+  font-family: 'icomoon';
+  color: inherit;
+  font-weight: 100;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-size: 0.8em;
+  font-style: normal;
+}
+
+.centering {
+  max-width: 600px;
+  margin: 0 auto;
+  font-family: "ubuntu", sans-serif;
+  padding: 0;
+}
+
+p {
+  line-height: 1.5rem;
+  font-size: 1rem;
+  margin: 0 2rem 2rem 2rem;
+}
+
+td p {
+  margin: 0;
+}
+
+.heading {
+  font-family: "gothic_ultra_otregular", serif;
+  text-align: center;
+  margin: 50px 0;
+  font-size: 3.5rem;
+  line-height: 2.5rem;
+}
+
+.index {
+  text-align: center;
+}
+
+.quote {
+  background-color: black;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 0 0 2rem 0;
+}
+
+h3 {
+  font-size: 2.5rem;
+  font-weight: normal;
+  font-family: "gothic_ultra_otregular", serif;
+  text-align: center;
+}
+
+a:link {
+  color: #dd0000;
+}
+
+a:hover {
+  color: red;
+}
+
+a:active {
+  color: white;
+}
+
+a:visited {
+  color: #ddd;
+}
+
+.horizline {
+  border-bottom: 1px solid #ddd;
+}
+
+.changelog .date {
+  width: 7rem;
+  vertical-align: top;
+  font-size: 14pt;
+  color: #aa0000;
+}
+
+.changelog tr {
+  margin-bottom: 50px;
+  display: block;
+}
+
+.changelog li {
+  margin-bottom: 10px;
+}
+
+blockquote {
+  background-color: black;
+  padding: 1rem;
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #ddd;
+  margin: 2rem 0;
+  position: relative;
+}
+
+blockquote:before, blockquote:after {
+  content: '\e902';
+  font-family: 'icomoon';
+  position: absolute;
+  top: 0;
+  left: 10px;
+  bottom: auto;
+  right: auto;
+  font-size: 100px;
+  color: rgba(255, 255, 255, 0.15);
+  z-index: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+blockquote:after {
+  content: '\e903';
+  bottom: 0;
+  right: 10px;
+  top: auto;
+  left: auto;
+}
+
+blockquote p {
+  z-index: 1;
+  padding: 0 2rem;
+  margin: 1rem 0;
+  line-height: 1.5rem;
+  position: relative;
+}
+/*# sourceMappingURL=intro.css.map */

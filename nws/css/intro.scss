@@ -1,0 +1,129 @@
+@import "vars";
+@import "include";
+
+* {box-sizing: border-box;}
+body {
+	background-color: $dark;
+	color: $darkfont;
+	font-family: $serif;
+	margin: 0;
+    padding: 0;
+    font-size: 1rem;
+}
+.external {
+    &:after {
+        content: ' \e901';
+        font-family:'icomoon';
+        color: inherit;
+        font-weight: 100;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+        font-size: 0.8em;
+        font-style: normal;
+    }
+}
+.centering {
+    max-width: 600px;
+    margin: 0 auto;
+    font-family: $sans;
+    padding: 0;
+}
+p {
+	line-height: 1.5rem;
+	font-size: 1rem;
+	margin: 0 2rem 2rem 2rem;
+}
+td p {
+    margin: 0;
+}
+.heading {
+	font-family: $title;
+	text-align: center;
+    margin: 50px 0;
+	font-size: 3.5rem;
+	line-height: 2.5rem;
+}
+.index {
+	text-align: center;
+}
+.quote {
+	background-color: black;
+	padding: 1rem;
+	border-top: 1px solid $darkfont;
+	border-bottom: 1px solid $darkfont;
+	margin: 0 0 2rem 0;
+}
+h3 {
+	font-size: 2.5rem;
+	font-weight: normal;
+	font-family: $title;
+	text-align: center;
+}
+a {
+	&:link {
+		color: $link;
+	}
+	&:hover {
+		color: red;
+	}
+	&:active {
+		color: white;
+	}
+	&:visited {
+		color: $darkfont
+	}
+}
+.horizline {
+	border-bottom: 1px solid $darkfont;
+}
+.changelog {
+	.date {
+		width: 7rem;
+		vertical-align: top;
+		font-size: 14pt;
+		color: $linkhover;
+	}
+	tr {
+		margin-bottom: 50px;
+		display: block;
+	}
+	li {
+		margin-bottom: 10px;
+	}
+}
+blockquote {
+	background-color: black;
+	padding: 1rem;
+	border-top: 1px solid $darkfont;
+    border-bottom: 1px solid $darkfont;
+    margin: 2rem 0;
+    position: relative;
+    &:before, &:after {
+        content: '\e902';
+        font-family:'icomoon';
+        position: absolute;
+        top:0;
+        left: 10px;
+        bottom:auto;
+        right:auto;
+        font-size: 100px;
+        color: rgba(255,255,255,0.15);
+        z-index: 0;
+        -webkit-font-smoothing: antialiased;
+        -moz-osx-font-smoothing: grayscale;
+    }
+    &:after {
+        content: '\e903';
+        bottom: 0;
+        right: 10px;
+        top:auto;
+        left:auto;
+    }
+    p {
+		z-index: 1;
+		padding: 0 2rem;
+		margin: 1rem 0;
+		line-height: 1.5rem;
+        position: relative;
+    }
+}

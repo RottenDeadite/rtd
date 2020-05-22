@@ -1,0 +1,125 @@
+<html>
+<head>
+	<style type="text/css">
+	div.editor {position: absolute;}
+	div.preview {position: absolute; border: 1px solid black; background-color: #DDDDDD; width: 500px; left: 680px; margin: 1em; padding: 0.5em;}
+	div.preview span {background-color: #999999;}
+	</style>
+	<title>New Whirling School</title>
+</head>
+<script type="text/javascript" src="../js/jquery.js"></script>
+<script>
+var sermon = 20;
+function insertAtCaret(areaId,text) {
+    var txtarea = document.getElementById(areaId);
+    var scrollPos = txtarea.scrollTop;
+    var strPos = 0;
+    // Something I stole that determines whether or not you're looking at FireFox or an IE client.
+    // I have to admit I'm not really sure how it works.
+    var br = ((txtarea.selectionStart || txtarea.selectionStart == '0') ? 
+        "ff" : (document.selection ? "ie" : false ));
+    if (br == "ie") { 
+        txtarea.focus();
+        var range = document.selection.createRange();
+        range.moveStart ('character', -txtarea.value.length);
+        strPos = range.text.length;
+    }
+    else if (br == "ff") strPos = txtarea.selectionStart;
+    var front = (txtarea.value).substring(0,strPos);  
+    var back = (txtarea.value).substring(strPos,txtarea.value.length); 
+    txtarea.value=front+text+back;
+    strPos = strPos + text.length;
+    if (br == "ie") { 
+        txtarea.focus();
+        var range = document.selection.createRange();
+        range.moveStart ('character', -txtarea.value.length);
+        range.moveStart ('character', strPos);
+        range.moveEnd ('character', 0);
+        range.select();
+    }
+    else if (br == "ff") {
+        txtarea.selectionStart = strPos;
+        txtarea.selectionEnd = strPos;
+        txtarea.focus();
+    }
+    txtarea.scrollTop = scrollPos;
+};
+function pad(number) {
+	return number > 9 ? "0" + number: "00" + number; // Is number greater than nine? if so, return the number, else cat left "0"
+}
+function dpad(number) {
+	if (number <= 99) {
+		if (number <= 9) {
+			number = "00" + number;
+		} else {
+			number = "0" + number;
+		}
+	}
+	return number;
+}
+function updateComs(number) {
+	var strCom = '<div id="'+sermon+'-000" class="commenthidden"><p></p></div>\n';
+	for (var i = 0; i < number; i++) {
+		strCom += '<div id="'+sermon+'-' + dpad(i+1) + '" class="commenthidden"><p></p></div>\n';
+	};
+	// console.log(strCom);
+	return strCom;
+}
+$(document).ready(function(){
+	$("#preview").html($("#lessonArea").text());
+	var commentNumber = 1;
+	$("#commentaryTags pre").text('<div id="'+sermon+'-000" class="commenthidden"><p></p></div>');
+	$("#buttonTag").click(function(){
+		var n = $("#buttonTag").html();
+		if (n=='Open') {
+			insertAtCaret('lessonArea','<span class="lessonlink" id="'+sermon+'-'+dpad(commentNumber)+'">');
+			$("#buttonTag").html('Close');
+		}
+		else {
+			insertAtCaret('lessonArea','</span>');
+			$("#buttonTag").html('Open');
+			commentNumber++;
+			$("#counter").html(pad(commentNumber));
+			$("#preview").html($("#lessonArea").val());
+			$("#commentaryTags pre").text(updateComs(commentNumber));
+		}
+	});
+	$("#buttonDown").click(function(){
+		commentNumber--;
+		$("#counter").html(dpad(commentNumber));
+		$("#commentaryTags pre").text(updateComs(commentNumber));
+	});
+	$("#buttonUp").click(function(){
+		commentNumber++;
+		$("#counter").html(dpad(commentNumber));
+		$("#commentaryTags pre").text(updateComs(commentNumber));
+	});
+});
+</script>
+<body>
+	<div class="editor">
+		<p>
+		<textarea rows="50" cols="80" wrap="on" virtual id="lessonArea">
+<p>The first monster was actually two, having been born twice like his mother-father, Vivec. He was not the mightiest of the eight to escape Muatra, but his actions were the most worrisome. He was known as Moon Axle, and he harvested the leftovers foibles of nature. This he did twice, as was said, and the second harvest always brought ruin or unwritten law. His aspect was faceted like a polyhedron.</p>
+<p>No perils are mentioned in the finding of Moon Axle, but it was known that he was immune to spears, so Vivec had to use the sword not held against him. Before he took issue with the monster, the warrior-poet asked:</p>
+<p>'How came you to be immune to spears?'</p>
+<p>To which Moon Axle replied, 'Mine is a dual nature, and protean. I am in fact made of many straight lines, though none last too long. In this way I have learned to ignore all true segments.'</p>
+<p>Luckily, the sword not held was curved and therefore could cut into Moon Axle, and before the sun was up he was bleeding from many wounds. Vivec did not slay him outright for to do so would to keep the foibles of nature within him and not back where they belonged. Soon Vivec had traced geography right again, and Moon Axle was ready to be slain.</p>
+<p>Vivec rose up in his giant-form, to be terrible to look upon. He reached into the west and pulled out a canyon, holding it like a horn. He reached east and ate a handful of nix hounds. Blowing their spirits through the canyon made a terrible wail, not unlike an unsolved woman. He said:</p>
+<p>'Let this overtake you,' and Moon Axle was overtaken by the curvatures of stolen souls. They wrapped about the monster like resin, until finally he could not move, nor could his dual nature.</p>
+<p>Vivec said, 'Now you are solved,' and pierced his child with Muatra. Moon Axle had been reduced to something static, and therefore shattered.</p>
+<p>The lines of Moon Axle were collected by Velothi philosophers and taken into caves. There, and for a year, Vivec taught the philosophers how to turn the lines of his son into the spokes of mystery wheels. This was the birth of the first Whirling School. Before, there had only been the surface thought of fire.</p>
+<p>Vivec looked at his first wheeling students and observed:</p>
+<p>'Alike the egg-layered universe is this morbid possession of three-distant coverage, soul-wrecked and alive, like my name is alive. In this cloister you have discovered one walking path, hilled like a sword but more coarsened. So edged it is that it has to be whispered to keep the tongue from bleeding, where its signs evacuate their former meanings, like empires that tarry too long.</p>
+<p>'The sword is estrangement from statesmanship.</p>
+<p>'Look on the estimable lines of my son, now crafted star-wise, his every limb equidistant from the center. Is he solved because I will it so? There cannot be a second stage. Think on the theory that my existence promulgates the five elements and alike the egg-layered universe I am cause for great density. Here is a thought that can break the wagon's axle; here is another that can soar.'</p>
+<p>The ending of the words is ALMSIVI.</p>
+
+		</textarea>
+		</p>
+		<p><button id="buttonTag" type="button">Open</button> <input type="button" value="&#x25BC;" id="buttonDown"><input type="button" value="&#x25B2;" id="buttonUp"> <span id="counter">00</span></p>
+		<div id="commentaryTags"><pre></pre></div>
+	</div>
+	<div class="preview" id="preview"></div>
+</body>
+</html>

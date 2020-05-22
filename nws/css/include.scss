@@ -1,0 +1,115 @@
+@import "vars";
+
+.modal-hidden {
+    display:none;
+}
+.modalWrapper {
+    display: none;
+    position: sticky;
+    z-index: 12;
+    transform:translate3d(-50%,-50%,0);
+    padding: 20px;
+    left:50%;
+    top:50%;
+    background: $visited;
+    width:600px;
+    @media all and (max-width: $mobile) {
+        width: 100%;
+        transform: none;
+        left:0;
+        top:33%;
+    }
+    &.visible {
+        display:block;
+        // @media all and (max-width: $mobile) {
+        //     max-height: calc(100vh - 100px);
+        // }
+    }
+    .modalClose {
+        position:absolute;
+        right:0;
+        top:-40px;
+        background: $visited;
+        display:block;
+        width:40px;
+        height:40px;
+        line-height:40px;
+        text-align:center;
+        font-size:1em;
+        cursor:pointer;
+        font-family:'icomoon';
+        &:before {
+            content: '\e900';
+        }
+    }
+    .htmlContent, .modalContent {
+        &.visible {
+            display:block;
+            z-index: 3;
+        }
+    }
+}
+.modalContent img {
+    width: 100%;
+}
+.modalBg {
+    background-color:rgba(0,0,0,0.5);
+    display:none;
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    &.visible {
+        display:block;
+    }
+}
+.modalContentWrapper {
+    display:block;
+    overflow-y: auto;
+    max-height: calc(100vh - 20px);
+}
+.htmlContent {
+    padding: 10px 30px;
+    > div {
+        background-color: white;
+        display:block;
+        width: 100%;
+    }
+    video {
+        width: 100%;
+        height: auto;
+        display:block;
+    }
+    .youtubewrapper {
+        width: 100%;
+        position:relative;
+        padding: 25px 0 56.25% 0;
+        height: 0;
+        min-width:calc(100vw - 320px);
+        iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+        }
+    }
+}
+ol {
+	padding: 0 2rem 2rem 2rem;
+	li {
+		line-height: 1.5rem;
+		margin-bottom: 1rem;
+	}
+}
+ul {
+    li {
+		line-height: 1.5rem;
+		margin-bottom: 0;
+	}
+	ul {
+		margin-top: 10px;
+	}
+}

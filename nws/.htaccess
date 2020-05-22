@@ -1,0 +1,6 @@
+Options -indexes
+<IfModule pagespeed_module>
+    ModPagespeed on
+    ModPagespeedEnableFilters rewrite_images
+    ModPagespeedEnableFilters elide_attributes
+</IfModule>
